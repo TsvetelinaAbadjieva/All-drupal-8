@@ -1,0 +1,15 @@
+view student entiy:
+   title: View Student Entity
+
+add student entity:
+   title: Add student entity
+
+edit student entity:
+   title: Edit Student Entity
+
+delete student entity:
+   title: Delete Student Entity
+
+administer student entity:
+   title: Administer Student Entity
+  #  restrict access: TRUE

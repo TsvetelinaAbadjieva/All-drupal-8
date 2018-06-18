@@ -1,0 +1,59 @@
+entity.student_entity.canonical:
+  path: '/student_entity/{student_entity}'
+  defaults:
+   # Calls the view controller, defined in the annotation of the studententity
+    _entity_view: 'student_entity'
+    _title: 'Student Entity Details'
+  requirements:   
+   # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'student_entity.view'
+
+entity.student_entity.collection:
+  path: '/student_entity/list'
+  defaults:
+    _entity_list: 'student_entity'
+    _title: 'Students List View'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer student entity'
+
+# in documentation is without entity before!
+student_entity.student_add:
+  path: '/student_entity/add'
+  defaults: 
+    _entity_form: 'student_entity.add'
+    _title: 'Add Student'
+  requirements:
+    _entity_create_access: 'student_entity'
+
+entity.student_entity.edit_form:
+  path: '/student_entity/{student_entity}/edit'
+  defaults: 
+     # Calls the form.edit controller, defined in the student_entity.
+    _entity_form: student_entity.edit
+    _title: 'Edit student details'
+  requirements: 
+    _entity_access: 'student_entity.edit'
+
+entity.student_entity.delete_form:
+  path: '/student_entity/{student_entity}/delete'
+  defaults:
+     # Calls the form.delete controller, defined in the student_entity.
+    _entity_form: student_entity.delete
+    _title: 'Delete Student'
+  requirements:
+    _entity_access: student_entity.delete   
+
+student_entity.student_settings:
+  path: '/admin/structure/student_entity_student_settings'
+  defaults:
+    #TO BE implemented in a form controller
+    _form: Drupal\student_entity\Form\StudentSettingsForm
+    _title: 'Students Settings'
+  requirements:   
+    _permission: 'administer student entity'
+
+
+            
+
+

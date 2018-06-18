@@ -1,0 +1,7 @@
+services:
+  my_test.client:
+    class: 'Drupal\my_test\Client\MyClient'
+    arguments: 
+      - '@http_client'
+      - '@key.repository'
+      - '@config.factory'

@@ -1,0 +1,14 @@
+ # Define the menu links for this module
+ # works in combination with the routing.yml
+ entity.student_entity.collection:
+     title: ' Student Content Entity Collection'
+     description: 'Students List'
+     route_name: entity.student_entity.collection
+     weight: 10
+     
+#route_name is the same as in routing.yml file
+student_entity.admin.structure.settings:
+     title: 'Student Settings'
+     description: 'Set Student Entity Configuration'
+     route_name: student_entity.student_settings
+     parent: system.admin_structure

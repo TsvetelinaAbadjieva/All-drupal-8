@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * implements hook_pre_render()
+ */
+function pizza_pre_render($message){
+    return "Hello my {$message} pizza! :)";
+}
+
+
+/**
+ * implements hook_menu()
+ */
+function pizza_menu(){
+    $items['pizza'] = array(
+        'title' => 'Pizza',
+        'page_callback' => 'show_pizza_page',
+        'file' => 'pizza.page.inc',
+     /*   'access arguments' => array('access content')*/
+
+    );
+    return $items;
+}
+
+/**
+* Implements hook_perm()
+*/
+function pizza_perm(){
+    return array('see pizza views', 'administer pizza page');
+}
+
+/**
+* Implements hook_user()
+*/
+
+function pizza_user($op, &$edit, &$account, $categoriy = NULL){
+    kint($account);
+    kint($op);
+    if($op == 'login'){
+        drupal_set_message('Welcome to pizza site!');
+    }
+}

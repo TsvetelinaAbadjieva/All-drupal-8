@@ -1,0 +1,10 @@
+# All action links for this module
+#add link for add student entity
+student_entity.student_add:
+    route_name: student_entity.student_add
+    title: 'Student Add'
+#define by route where to appear this links
+    appears_on:
+      - entity.student_entity.collection
+      - entity.student_entity.canonical
+    
